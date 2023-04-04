@@ -24,7 +24,7 @@ describe('Product form create tests', () => {
         })
     })
 
-    test('Should render Form', async () => {
+    test('Should show totast and redirect when submit form correctly', async () => {
 
         render(
             <Router history={history}>
@@ -41,7 +41,7 @@ describe('Product form create tests', () => {
 
         const submitButton = screen.getByRole('button', { name: /salvar/i })
 
-        await selectEvent.select(categoriesInput, ['Eletrônicos', 'Computadores'])
+        await selectEvent.select(categoriesInput, ['Computadores', 'Livros'])
 
         userEvent.type(nameInput, "Computador")
         userEvent.type(priceInput, "5000.12")
@@ -51,10 +51,13 @@ describe('Product form create tests', () => {
         userEvent.click(submitButton)
 
         await waitFor(() => {
-            const toastElement = screen.getByText('Produto cadastrado com sucesso');
-            expect(toastElement).toBeInTheDocument();
+
+            const toastElement = screen.getByText('Produto cadastrado com sucesso')
+
+            expect(toastElement).toBeInTheDocument
         })
 
+        expect(history.location.pathname).toEqual('/admin/products')
     })
 })
 
