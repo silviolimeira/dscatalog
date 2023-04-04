@@ -1,10 +1,11 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import Form from '../Form';
 import history from 'util/history';
 import { Router, useParams } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
 import { server } from './fixtures';
 import selectEvent from 'react-select-event';
+import { ToastContainer } from 'react-toastify';
 
 beforeAll(() => server.listen())
 afterAll(() => server.resetHandlers())
@@ -27,6 +28,7 @@ describe('Product form create tests', () => {
 
         render(
             <Router history={history}>
+                <ToastContainer />
                 <Form />
             </Router>
         )
@@ -47,6 +49,11 @@ describe('Product form create tests', () => {
         userEvent.type(descriptionInput, "Computador muito bom")
 
         userEvent.click(submitButton)
+
+        await waitFor(() => {
+            const toastElement = screen.getByText('Produto cadastrado com sucesso');
+            expect(toastElement).toBeInTheDocument();
+        })
 
     })
 })
