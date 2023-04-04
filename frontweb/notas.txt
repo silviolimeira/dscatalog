@@ -1,0 +1,33 @@
+Environment Setup:
+$ export PATH=/d/projeto-novo/nvm-noinstall:/d/nodejs-nvm/:$PATH
+
+Install nvm Node:
+$ nvm install 14.18.2
+
+Material Apoio:
+
+https://docs.google.com/document/d/1OZQpRGr82dS4Gak9ut1R_CHbzpLjPDOycKJO7-NwVbE/edit#
+
+Todo Material de Apoio:
+https://docs.google.com/document/d/1ylKpipGrPME2gOMCgMAgfXvIvlDFf29dyYxPsEAl1ns/edit#
+
+Instalar o axios:
+$ yarn add axios;
+
+
+Tratamento logout:
+    <div className="nav-login-logout">
+        {authContextData.authenticated ? (
+        <a href="#logout" onClick={handleLogoutClick}>
+            LOGOUT
+        </a>
+        ) : (
+        <Link to="/admin/auth">LOGIN</Link>
+        )}
+    </div>
+
+
+instalar React Select:
+https://react-select.com/home
+
+yarn add react-select @types/react-select 
