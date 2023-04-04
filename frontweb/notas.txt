@@ -31,3 +31,5 @@ instalar React Select:
 https://react-select.com/home
 
 yarn add react-select @types/react-select 
+
+yarn add react-select-event@5.3.0
