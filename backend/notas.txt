@@ -1,0 +1,11 @@
+
+# executando no modo teste
+$ mvn spring-boot:run
+
+# executando o jar depois do mvn pakcage
+$ java -jar ./target/dscatalog-0.0.1-SNAPSHOT.jar 
+
+# Gerando imagem
+$ docker build -t dscatalog:v1 .
+
+$ docker run -p 8080:8080 dscatalog:v1
