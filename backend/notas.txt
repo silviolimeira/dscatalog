@@ -1,11 +1,14 @@
+Creating and filling a Postgres DB with Docker compose
+https://levelup.gitconnected.com/creating-and-filling-a-postgres-db-with-docker-compose-e1607f6f882f
 
-# executando no modo teste
-$ mvn spring-boot:run
 
-# executando o jar depois do mvn pakcage
-$ java -jar ./target/dscatalog-0.0.1-SNAPSHOT.jar 
+Iniciar ambiente:
+docker compose up -d
 
-# Gerando imagem
-$ docker build -t dscatalog:v1 .
+Fechar ambiente:
+docker compose down
 
-$ docker run -p 8080:8080 dscatalog:v1
+
+
+Remover volumes:
+docker-compose down --volumes
