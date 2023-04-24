@@ -38,4 +38,16 @@ yarn add react-select-event@5.3.0
 Dockerizing a React App for Development and Production:
 https://www.youtube.com/watch?v=6p7lylJEjrU&t=166s
 
+Dockerize your React app:
+https://dev.to/karanpratapsingh/dockerize-your-react-app-4j2e
 
+
+$ docker-compose -f docker-compose.dev.yml up
+
+We can also add it to our package.json
+"dev": "docker-compose -f docker-compose.dev.yml up"
+
+Build production image:
+$ docker-compose -f docker-compose.prod.yaml build
+
+$ docker run -p 3000:80 --name react-app app-prod
