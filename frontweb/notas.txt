@@ -33,3 +33,9 @@ https://react-select.com/home
 yarn add react-select @types/react-select 
 
 yarn add react-select-event@5.3.0
+
+
+Dockerizing a React App for Development and Production:
+https://www.youtube.com/watch?v=6p7lylJEjrU&t=166s
+
+
